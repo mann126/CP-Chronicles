@@ -1,3 +1,5 @@
-Name                 | Github           | Roll number
----------------------------------------------------------------
-Dheeraj                Dheeraj-06         IIT2024550          (example)
+| Name| Github-ID  | College name | Roll no.   
+|:-------------|------------:|----------------|-----------:|
+
+<!--example |Korvac | Betty |Reyansh College| IIT2024067|>
+<!-- ADD BELOW THIS-->
