@@ -47,7 +47,6 @@
 |Aditya Singh            | adityasingh-0803         | BVDUCOEP                                                        |
 | Mahavir dodiya         |Mvdodiya001               |  IIIT Allahabad                                                 |
 | Ishan Raj Singh        | ishanrajsingh            | Amity, Noida                                                    |
-| Harsh Garg             | gargharsh182005-lab      | IIIT Allahabad                                                  |
 | Lakshmish            | Coldesy             | IIIT Allahabad 
 |Priyanshu Ranjan        | justpriyanshu            | BIT Mesra
 
