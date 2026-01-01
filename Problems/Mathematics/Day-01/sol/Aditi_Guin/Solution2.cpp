@@ -8,37 +8,37 @@ int main() {
     int n, k;
     cin >> n >> k;
 
-    vector<int> a(n);
-    for (int &x : a) cin >> x;
-
     map<vector<pair<int,int>>, long long> freq;
     long long ans = 0;
 
-    for (int x : a) {
-        int temp = x;
-        vector<pair<int,int>> cur, need;
+    for (int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
 
-        for (int p = 2; p * p <= temp; p++) {
-            if (temp % p == 0) {
-                int cnt = 0;
-                while (temp % p == 0) {
-                    temp /= p;
-                    cnt++;
-                }
-                cnt %= k;
-                if (cnt) {
-                    cur.push_back({p, cnt});
-                    need.push_back({p, (k - cnt) % k});
-                }
+        // Factorize x
+        map<int, int> mp;
+        for (int p = 2; p * p <= x; p++) {
+            while (x % p == 0) {
+                mp[p]++;
+                x /= p;
+            }
+        }
+        if (x > 1) mp[x]++;
+
+        // Reduce powers modulo k
+        vector<pair<int,int>> cur, need;
+        for (auto [prime, cnt] : mp) {
+            int r = cnt % k;
+            if (r != 0) {
+                cur.push_back({prime, r});
+                need.push_back({prime, (k - r) % k});
             }
         }
 
-        if (temp > 1) {
-            cur.push_back({temp, 1 % k});
-            need.push_back({temp, (k - 1) % k});
-        }
-
+        // Count matching complements
         ans += freq[need];
+
+        // Store current factorization
         freq[cur]++;
     }
 
